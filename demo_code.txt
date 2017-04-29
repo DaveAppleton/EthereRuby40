@@ -5,4 +5,13 @@ http://somesite/sendvalue?from=dave&to=TCWu&amount=42.00&signature=1811c4c90b7b
 
 //end REST OMIT
 
+//start skeleton OMIT
+pragma solidity ^0.4.10;
+
+contract RubyToken {
+	... storage declarations
+
+	... methods & constructor
+}
+//end skeleton OMIT
 

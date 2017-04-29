@@ -22,13 +22,8 @@ https://hellogold.com
 
 * Personal philosophy w.r.t. blockchain
 
-EVERY COMPETENT SOFTWARE ARCHITECT
+.image blockchain.jpg 
 
-SHOULD INCLUDE 
-
-BLOCKCHAIN 
-
-IN THEIR TOOLKIT
 
 * What I AM going to cover
 - What is a blockchain?
@@ -36,7 +31,7 @@ IN THEIR TOOLKIT
 - Programming smart contracts
 - some tools to help you get started
 - talking to contracts from a wallet
-- arbitary subjective comments about the state of systems today and where I think they should go
+- arbitary subjective comments about random things...
 
 * And then the good bit
 - T.C. Wu will explain how you can talk to it with Ruby :-)
@@ -48,7 +43,7 @@ Which then will give you a new tool for problem solving
 - Put into signed blocks
 - Which are added to a chain
 - in a manner such that all the independant nodes that operate the network
-- agreed the whole thing to be valid (consensus)i
+- agreed the whole thing to be valid (consensus)
 
 * Digital Signatures
 - I am going to assume that you understand hashing
@@ -56,16 +51,15 @@ Which then will give you a new tool for problem solving
 - change the comma after "Young man" to a full stop & rehash
 - a small change in the content causes a huge change in the result.
 .play hashBaby.go  /start main OMIT/,/end main OMIT/
-
-* Proof
-
 - now encrypt the hash value using public key encryption....
+
 * Public Key encryption in 20 seconds
 - uses a private key (it's mathematical)
 - public key derived from private key (but not vice versa)
+- address is derived from public key
 - something encrypted by private key can be read with public key
-- with public key you can prove that document was encrypted by owner of private key.
-- thus the hash, encrypted ensures that the hash, therefore the document is unchanged
+- with public key you can prove it was encrypted by owner of private key.
+- encrypting the hash, ensures that the hash, thus the document is unchanged
 - and ensures that the signer is who they say they are.
 
 * Consensus
@@ -73,6 +67,8 @@ Which then will give you a new tool for problem solving
 - makes it virtually impossible for anybody to modify the past records in the chain
 
 So what are all these transactions doing?
+
+Web analogy:
 
 .code demo_code.txt /start REST OMIT/,/end REST OMIT/
 
@@ -83,28 +79,70 @@ Enter BITCOIN and 1000 other AltCoins
 Mathematics and computer science guarantee ownership and scarcity.
 
 * So what is Ethereum doing differently?
-- The nodedes are not just accounting machines
+- The nodes are not just accounting machines
 - A transaction does not JUST have to transfer value
 - A transaction can *POST* a _contract_ to the chain
 - Just like you *could* post a script and have it delivered to a script folder on a server
 - Ethereum becomes a distributed computer
+- code is compiled into byte code
+- byte code is placed on the blockchain
+- every node has a Virtual Machine (byte code interpreter)
+- users of the contract need to know the available entry points
 
 * What is a contract?
 - is just like a ruby app in that it has
 -- instance data
 -- methods with parameters and local data
 -- constructors
+-- it can hold value (ETH)
+-- it can send and receive ETH
+-- code it is executed by *every* node to get consensus
 
-- but it is executed by *every* node to get consensus
+Consensus is the agreement on the transactions. 
+
+The effect is that the internal state of each node will be the same.
 
 * Two ways to interact
 - *Transactions*
 make changes to the storage (and cost Ether)
 can only return results by _events_
 
+(caveat - one contract can transact on another *and* get returned data)
+
+If a transaction fails *ALL* changes are reversed and *NO* logs produced.
+
 - *Calls*		
 query the state of the storage or the results of a calculation
 get an immediate response
 cannot change the state of the storage
 
+* Building A Coin Contract
+
+.code demo_code.txt  /start skeleton OMIT/,/end skeleton OMIT/
+
+kinda familar - let's see the core data structure
+
+.code RubyTokenPresent.sol  /start fa OMIT/,/end fa OMIT/
+
+* Essential for ERC20 coin
+
+.code RubyTokenPresent.sol  /start basic OMIT/,/end basic OMIT/
+
+.code RubyTokenPresent.sol  /start balance OMIT/,/end balance OMIT/
+
+.code RubyTokenPresent.sol  /start xfer OMIT/,/end xfer OMIT/
+
+* Modifiers & events
+
+.code RubyTokenPresent.sol  /start mod event OMIT/,/end mod event OMIT/
+
+Events put data into the log (along with the recorded transaction) and can be detected by event handlers in wallets etc.
+
+Modifiers are an easy way to add a prefix to a function for code reuse.
+
+"throw" causes the transaction to be terminated and changes rolled back.
+
+* The SPECIAL RubyCoin functions
+
+.code RubyTokenPresent.sol  /start cs OMIT/,/end cs OMIT/
 
