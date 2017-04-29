@@ -21,7 +21,7 @@ contract RubyToken {
     mapping (address => fundAmount) public balances;
 
     /* This generates a public event on the blockchain that will notify clients */
-    event Transfer(address indexed from, address indexed to, uint256 value); // HL
+    event Transfer(address indexed from, address indexed to, uint256 value); 
 
     modifier MustBeEnabled(address x) {
         if (balances[x].blocked) throw;
@@ -58,8 +58,8 @@ contract RubyToken {
 
     /* Send coins */
     function transfer(address _to, uint256 _value) 
-    MustBeEnabled(msg.sender) // HL
-    MustBeEnabled(_to) { // HL
+    MustBeEnabled(msg.sender)
+    MustBeEnabled(_to) { 
         if (_to == 0x0) throw;                               // Prevent transfer to 0x0 address
         if (balances[msg.sender].amount < _value) throw;     // Check if the sender has enough
         if (balances[_to].amount + _value < balances[_to].amount) throw; // Check for overflows
