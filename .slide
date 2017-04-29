@@ -152,8 +152,13 @@ Modifiers are an easy way to add a prefix to a function for code reuse.
 
 * Tools 
 
-- Parity : https://github.com/paritytech/parity
-- Remix : remix.ethereum.org
-- Ethereum Studio : live.ether.camp
-- Embark Framework - https://github.com/iurimatias/embark-framework
-- Truffle - https://github.com/trufflesuite/truffle
+- Parity : 
+.link https://github.com/paritytech/parity
+- Remix : 
+.link https://remix.ethereum.org
+- Ethereum Studio : 
+.link https://live.ether.camp
+- Embark Framework : 
+.link https://github.com/iurimatias/embark-framework
+- Truffle : 
+.link https://github.com/trufflesuite/truffle
