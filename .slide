@@ -53,10 +53,11 @@ Which then will give you a new tool for problem solving
 * Digital Signatures
 - I am going to assume that you understand hashing
 - hash "Young man, in mathematics you don't understand things. You just get used to them."
-`0xd0cf918e7bde72fc4775f65ed62151cba52a0539829b8f9fc5c75c4924036b31`
 - change the comma after "Young man" to a full stop & rehash
-`0x2ef4db71e2379d6f9fd5b6a8a13cdb5391a9e7778b4d516795011811c4c90b7b`
 - a small change in the content causes a huge change in the result.
+.play hashBaby.go  /start main OMIT/,/end main OMIT/
+
+* Proof
 
 - now encrypt the hash value using public key encryption....
 * Public Key encryption in 20 seconds
