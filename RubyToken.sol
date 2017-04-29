@@ -19,9 +19,7 @@ contract RubyToken {
 
     /* This creates an array with all balances */
     mapping (address => fundAmount) public balances;
-//end fa OMIT
 
-//start mod event OMIT
     /* This generates a public event on the blockchain that will notify clients */
     event Transfer(address indexed from, address indexed to, uint256 value); // HL
 
@@ -37,7 +35,6 @@ contract RubyToken {
         
         _;
     }
-//end mod event OMIT
 
     /* Initializes contract with initial supply tokens to the creator of the contract */
     function RubyToken(
@@ -55,14 +52,11 @@ contract RubyToken {
         decimals = decimalUnits;                            // Amount of decimals for display purposes
     }
 
-//start balance OMIT
     function balanceOf(address user) constant returns (uint256) {
         return balances[user].amount;
     }
-//end balance OMIT
 
     /* Send coins */
-//start xfer OMIT
     function transfer(address _to, uint256 _value) 
     MustBeEnabled(msg.sender) // HL
     MustBeEnabled(_to) { // HL
@@ -73,9 +67,7 @@ contract RubyToken {
         balances[_to].amount += _value;                        // Add the same to the recipient
         Transfer(msg.sender, _to, _value); // Notify anyone listening that this transfer took place // HL
    }
-//end xfer OMIT
    
-//start cs OMIT
     /* Approve the account for operation */
     function approve(address user) MustBeOwner {
         balances[user].passedKYC = true;
@@ -92,7 +84,6 @@ contract RubyToken {
     function newOwner(address newOwner) MustBeOwner {
         owner = newOwner;
     }
-//end cs OMIT
 
 }
 
