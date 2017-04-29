@@ -44,6 +44,7 @@ contract RubyToken {
     }
 //end mod event OMIT
 
+//start constructor OMIT
     /* Initializes contract with initial supply tokens to the creator of the contract */
     function RubyToken(
         uint256 initialSupply,
@@ -53,13 +54,13 @@ contract RubyToken {
         ) {
         owner = msg.sender;
         balances[msg.sender].passedKYC = true;
-        balances[msg.sender].amount = initialSupply;              // Give the creator all initial tokens
-        totalSupply = initialSupply;                        // Update total supply
-        name = tokenName;                                   // Set the name for display purposes
-        symbol = tokenSymbol;                               // Set the symbol for display purposes
-        decimals = decimalUnits;                            // Amount of decimals for display purposes
+        balances[msg.sender].amount = initialSupply;  // Give the creator all initial tokens
+        totalSupply = initialSupply;                  // Update total supply
+        name = tokenName;                             // Set the name for display purposes
+        symbol = tokenSymbol;                         // Set the symbol for display purposes
+        decimals = decimalUnits;                      // Amount of decimals for display purposes
     }
-
+//end constructor OMIT
 //start balance OMIT
     function balanceOf(address user) constant returns (uint256) {
         return balances[user].amount;

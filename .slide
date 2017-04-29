@@ -132,6 +132,10 @@ kinda familar - let's see the core data structure
 
 .code RubyTokenPresent.sol  /start xfer OMIT/,/end xfer OMIT/
 
+* The Constructor
+
+.code RubyTokenPresent.sol  /start constructor OMIT/,/end constructor OMIT/
+
 * Modifiers & events
 
 .code RubyTokenPresent.sol  /start mod event OMIT/,/end mod event OMIT/
@@ -146,3 +150,10 @@ Modifiers are an easy way to add a prefix to a function for code reuse.
 
 .code RubyTokenPresent.sol  /start cs OMIT/,/end cs OMIT/
 
+* Tools 
+
+- Parity : https://github.com/paritytech/parity
+- Remix : remix.ethereum.org
+- Ethereum Studio : live.ether.camp
+- Embark Framework - https://github.com/iurimatias/embark-framework
+- Truffle - https://github.com/trufflesuite/truffle
