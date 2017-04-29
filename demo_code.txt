@@ -1,0 +1,8 @@
+
+//start REST OMIT
+
+http://somesite/sendvalue?from=dave&to=TCWu&amount=42.00&signature=1811c4c90b7b
+
+//end REST OMIT
+
+
