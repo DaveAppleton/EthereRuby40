@@ -162,3 +162,16 @@ Modifiers are an easy way to add a prefix to a function for code reuse.
 .link https://github.com/iurimatias/embark-framework
 - Truffle : 
 .link https://github.com/trufflesuite/truffle
+
+* using remix
+
+.image VM.png
+
+* Use Remix to get the ABI 
+- ABI = application binary interface
+
+.image ABI.png
+
+* Ruby
+
+.code tuesday.rb 
