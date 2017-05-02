@@ -1,4 +1,4 @@
-Introducing Ethereum smart contracts for Ruby programmers
+Introducing Ethereum smart contracts for Ruby devs
 Part I Ethereum and the blockchain
 Tags: Ethereum, Solidity, Smart Contracts, Ruby Tuesdays
 
@@ -7,6 +7,10 @@ Blockchain Developer, HelloGold
 calistralabs@gmail.com
 https://hellogold.com
 @AppletonDave
+
+* I had promised....
+
+.image ruby.png 
 
 * Quick Intro / commericial break
 
@@ -175,3 +179,24 @@ Modifiers are an easy way to add a prefix to a function for code reuse.
 * Ruby
 
 .code tuesday.rb 
+
+
+* Parity 
+
+- Parity is an ethereum client with web interface
+
+.image contracts.png
+
+* Watch a contract 
+
+- Need to watch a contract
+
+.image addcontract.png
+
+* Contracts
+
+.image contract2.png
+
+* Contracts
+
+.image contract3.png
