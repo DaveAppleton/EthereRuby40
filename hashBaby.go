@@ -4,14 +4,9 @@ import (
 	"crypto/md5"
 	"encoding/hex"
 	"fmt"
-	//"github.com/ethereum/go-ethereum/crypto"
 )
 
 //start main OMIT
-// only if you have ethereum libs installed!
-// func prKeccak(what string) {
-// 	fmt.Println(crypto.Keccak256Hash([]byte(what)).Hex())
-// }
 
 func GetMD5Hash(text string) {
 	hasher := md5.New()
